@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Saol_Display';
+  src: url("./fonts/Saol_Display_Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+  h1 {
+    font-family: 'Saol_Display';
+    text-transform: uppercase;
+    font-weight: normal;
+
+    span {
+      text-align: center;
+    }
+  }
+
+
+  .h-100 {
+    height: 100%;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .grid {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    font-size: 20vh;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(auto-fill, 1em);
+  }
