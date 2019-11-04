@@ -14,10 +14,16 @@
   "dependencies": {
     "@nuxt/http": "^0.3.0",
     "charming": "3.0.1",
+    "gsap": "^2.1.3",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
     "node-sass": "4.13.0",
     "nuxt": "^2.5.1",
     "reqlim": "^0.0.0",
     "sass-loader": "8.0.0"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.1.2"
+  }
 }

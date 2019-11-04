@@ -1,20 +1,17 @@
 <template>
   <section class="w-100 h-100">
-    <h1 class="grid" ref="title">Isabella</h1>
+    <TypoGrid class="grid--layout-1"></TypoGrid>
   </section>
 </template>
 
 <script>
-import charming from "charming";
+
+import TypoGrid from "../components/TypoGrid";
+
 export default {
-  mounted() {
-    this.$nextTick(() => {
-      const title = this.$refs.title;
-      charming(title, {
-        tagName: "span"
-      });
-    });
-  }
+    components: {
+      TypoGrid
+    }
 };
 </script>
 

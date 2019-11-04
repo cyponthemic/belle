@@ -45,6 +45,10 @@ export default {
    ** Nuxt.js modules
    ** Doc: https://nuxtjs.org/guide/modules
    */
+  buildModules: [
+    '@nuxtjs/tailwindcss'
+  ],
+
   modules: [
     // Doc: https://http.nuxtjs.org
     "@nuxt/http",
