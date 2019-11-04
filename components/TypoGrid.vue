@@ -22,10 +22,11 @@
 </style>
 <script>
   import work from "~/constant/work";
-  import {debounce} from "lodash-es";
+
 
   import NavItem from "../constant/navItem";
   import TypoGridItem from "./TypoGridItem";
+  import debounce from "lodash-es/debounce";
 
 
 

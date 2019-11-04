@@ -8,6 +8,7 @@
 
 import TypoGrid from "../components/TypoGrid";
 
+
 export default {
     components: {
       TypoGrid

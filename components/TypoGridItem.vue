@@ -14,11 +14,10 @@
   </nuxt-link>
 </template>
 <script>
-  import TweenMax from "gsap/TweenMax";
-  import NavItem from "~/constant/navItem";
+  import TweenMax from "gsap/umd/TweenMax";
   import Nearby from "~/constant/nearby";
-  import {merge} from "lodash-es";
   import charming from "charming";
+  import merge from "lodash-es/merge";
 
   /**
    * Equation of a line.
