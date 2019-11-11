@@ -18,15 +18,9 @@
   import Nearby from "~/constant/nearby";
   import charming from "charming";
   import merge from "lodash-es/merge";
+  import {lineEq} from "~/constant/animation";
 
-  /**
-   * Equation of a line.
-   */
-  const lineEq = (y2, y1, x2, x1, currentVal) => {
-    // y = mx + b
-    var m = (y2 - y1) / (x2 - x1), b = y1 - m * x1;
-    return m * currentVal + b;
-  };
+
 
   const distanceThreshold = {min: 0, max: 50};
   const opacityInterval = {from: 0, to: 1};

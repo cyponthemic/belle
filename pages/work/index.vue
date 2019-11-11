@@ -16,12 +16,20 @@
 </template>
 <style>
   .work-item {
+
     text-transform: none;
     line-height: 1.23;
+
   }
 
-  .work-item:hover {
-    font-style: italic;
+  .work-item a {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.345, 0, 0, 1),
+    opacity 0.6s cubic-bezier(0.345, 0, 0, 1);
+  }
+  .work-item:hover a {
+    transform: skewX(-15deg) !important;
   }
 </style>
 <script>
