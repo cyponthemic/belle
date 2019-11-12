@@ -1,3 +1,5 @@
+import routeDefault from './constant/route'
+
 export default {
   /*
    ** Rendering mode
@@ -12,8 +14,8 @@ export default {
   head: {
     title: "Nuxt.js starter for CSB",
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {charset: "utf-8"},
+      {name: "viewport", content: "width=device-width, initial-scale=1"},
       {
         hid: "description",
         name: "description",
@@ -21,7 +23,7 @@ export default {
       }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {rel: "icon", type: "image/x-icon", href: "/favicon.ico"},
       {
         href:
           "https://agencehotelparticulier.com/assets/fonts/Saol_Display_Regular.woff"
@@ -51,10 +53,7 @@ export default {
 
   modules: [
     ['storyblok-nuxt', {accessToken: 'lVNHPozYedEoxZotaBKjJgtt', cacheProvider: 'memory'}],
-    // Doc: https://http.nuxtjs.org
     "@nuxt/http",
-    // TODO: Remove it if you want to eject from codeSandbox
-    "./codesandbox"
   ],
 
   /*
@@ -64,6 +63,13 @@ export default {
     // See https://http.nuxtjs.org/api/#options
   },
 
+  generate: {
+    fallback: '200.html',
+    // Make a switch to determine if
+    // we generate one page or the whole site
+    // to generate one page `yarn generate -r /news` for example
+    routes: routeDefault
+  },
   /*
    ** Build configuration
    ** Doc: https://nuxtjs.org/api/configuration-build
@@ -75,6 +81,7 @@ export default {
     transpile: [
       'lodash-es'
     ],
-    extend(config, ctx) {}
+    extend(config, ctx) {
+    }
   }
 };
