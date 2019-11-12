@@ -28,6 +28,7 @@
 
 <script>
   import marked from 'marked'
+  import get from 'lodash-es/get'
   import storyblokLivePreview from '@/mixins/storyblokLivePreview'
   import IWQuote from "@/components/IWQuote";
 
@@ -42,15 +43,15 @@
       }
     },
     mounted() {
-      if(!this.story.content.background_color) return
+      if(!get(this.story, 'content.background_color')) return
       this.$store.commit('colors/update', {
         key: 'background',
-        value: this.story.content.background_color
+        value: get(this.story, 'content.background_color')
       })
     },
 
     destroyed() {
-      if(!this.story.content.background_color) return
+      if(!get(this.story, 'content.background_color')) return
       this.$store.commit('colors/reset' , 'background')
     },
 
