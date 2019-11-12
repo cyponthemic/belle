@@ -38,8 +38,26 @@
   export default {
     data() {
       return {
-        navigation: work.map((w,index) => new NavItem(w))
+        total: 0, data: { stories: [] },
       }
     },
+    computed: {
+      navigation() {
+        return this.data.stories.map((w,index) => new NavItem(w))
+      }
+    },
+    asyncData (context) {
+      let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+
+      return context.app.$storyapi.get('cdn/stories', {
+        version: version,
+        starts_with: `work`,
+        cv: context.store.state.storyblok.cacheVersion
+      }).then((res) => {
+        return res
+      }).catch((res) => {
+        context.error({ statusCode: res.response.status, message: res.response.data })
+      })
+    }
   }
 </script>

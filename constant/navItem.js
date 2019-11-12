@@ -11,8 +11,16 @@ export default class NavItem {
     }
   }
 
+  get made_up_link() {
+      return  `/work/${this.title.replace(" ", "-").toLowerCase()}`
+  }
+
   get link() {
-    return `/work/${this.title.replace("\\s+", "-").toLowerCase()}`
+    return this.full_slug || this.made_up_link
+  }
+
+  get title() {
+    return this.name
   }
 
   get style() {

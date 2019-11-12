@@ -1,36 +1,37 @@
 export default [
   {
     letter: 'I',
-    title: "Roadshow Films"
+    name: "Roadshow Films",
   },
   {
     letter: 'S',
-    title: 'Smiling Dick',
+    name: 'Smiling Dick',
     oneLine: true
   },
   {
     letter: 'A',
-    title: 'Qantas'
+    name: 'Qantas'
   },
   {
     letter: 'B',
-    title: 'Australian Red Cross Blood Service',
+    name: 'Australian Red Cross Blood Service',
+    full_slug: 'australian-red-cross-blood-service',
     width: 600
   },
   {
     letter: 'E',
-    title: 'Anambah House'
+    name: 'Anambah House'
   },
   {
     letter: 'L',
-    title: 'Holden',
+    name: 'Holden',
   },
   {
     letter: 'L',
-    title: 'EatCLub'
+    name: 'EatCLub'
   },
   {
     letter: 'A',
-    title: 'MedibAnk'
+    name: 'MedibAnk'
   },
 ]

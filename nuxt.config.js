@@ -50,6 +50,7 @@ export default {
   ],
 
   modules: [
+    ['storyblok-nuxt', {accessToken: 'lVNHPozYedEoxZotaBKjJgtt', cacheProvider: 'memory'}],
     // Doc: https://http.nuxtjs.org
     "@nuxt/http",
     // TODO: Remove it if you want to eject from codeSandbox
