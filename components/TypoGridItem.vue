@@ -43,7 +43,9 @@
         },
         offset: {
           x: 0,
-          y: 0
+          y: 0,
+          width: 0,
+          height: 0,
         }
       }
     },
@@ -88,6 +90,8 @@
 
         this.offset.x = letter.offsetLeft
         this.offset.y = letter.offsetTop
+        this.offset.width = letter.clientWidth
+        this.offset.height = letter.clientHeight
       }
 
     },
