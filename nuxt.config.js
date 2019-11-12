@@ -69,7 +69,7 @@ export default {
     // Make a switch to determine if
     // we generate one page or the whole site
     // to generate one page `yarn generate -r /news` for example
-    routes: routeDefault
+    // routes: routeDefault
   },
   /*
    ** Build configuration
