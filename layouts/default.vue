@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto h-100 w-100">
+  <div class="w-100 mx-auto">
     <nuxt-link to="/">
       <h3 class="logotype text-center text-white absolute">Isabella <br> Wood</h3>
     </nuxt-link>
@@ -8,13 +8,11 @@
 
     <div class="footer text-center text-white absolute inset-x-0">
       <ul>
-        <li>About</li>
         <li>
           <nuxt-link to="/work">
             Work
           </nuxt-link>
-          </li>
-        <li>Test</li>
+        </li>
       </ul>
     </div>
   </div>
