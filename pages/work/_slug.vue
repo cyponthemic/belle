@@ -7,18 +7,18 @@
         <div class="w-1/4 mr-5">
           <div class="wysiwyg">
             <h3 class="text-xl mt-6 text-mono uppercase">In Brief</h3>
-            <div v-html="inBrief"></div>
+            <div v-html="marked(story.content.in_brief)"></div>
           </div>
 
           <div class="wysiwyg">
             <h3 class="text-xl mt-6 text-mono uppercase">In Theory</h3>
-            <div v-html="inTheory"></div>
+            <div v-html="marked(story.content.in_theory)"></div>
           </div>
         </div>
         <div class="w-1/2">
           <div class="wysiwyg">
             <h3 class="text-xl mt-6 text-mono uppercase">In Practice</h3>
-            <div v-html="inPractice"></div>
+            <div v-html="marked(story.content.in_practice)"></div>
           </div>
         </div>
       </div>
@@ -36,21 +36,11 @@
 
     components: {IWQuote},
 
-    computed: {
-      inBrief () {
-        if(!this.story.content.in_brief) return
-        return marked(this.story.content.in_brief || '')
-      },
-      inTheory () {
-        if(!this.story.content.in_theory) return
-        return marked(this.story.content.in_theory || '')
-      },
-      inPractice() {
-        if(!this.story.content.in_practice) return
-        return marked(this.story.content.in_practice || '')
+    methods: {
+      marked(value) {
+        return marked(value)
       }
     },
-
     mounted() {
       if(!this.story.content.background_color) return
       this.$store.commit('colors/update', {

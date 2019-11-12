@@ -7,7 +7,7 @@
   text-decoration: underline;
 }
 
-/*.wysiwyg h2 {*/
-/*  @apply '.text-serif'*/
-/*}*/
-
+.wysiwyg h2 {
+  font-family: 'Saol_Display';
+  font-size: 2rem;
+}
