@@ -5,6 +5,12 @@ export default {
    ** Rendering mode
    ** Doc: https://nuxtjs.org/api/configuration-mode
    */
+  vue: {
+    config: {
+      devtools: true
+    }
+  },
+  
   mode: "universal",
 
   /*

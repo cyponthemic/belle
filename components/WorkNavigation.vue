@@ -19,7 +19,7 @@
       }
     },
 
-    created() {
+    mounted() {
       this.$store.dispatch('work/fetch', this)
     }
   }
