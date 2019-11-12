@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto pb-6 mb-6">
+  <div class="container mx-auto pb-6 mb-6" v-if="story.content">
     <section class="m-nav w-100 max-w-4xl mx-auto text-center text-black" v-editable="story.content">
       <h1 class="text-xl mt-6 uppercase font-sans" v-html="story.name"></h1>
       <IWQuote v-if="story.content.quote" :quote="story.content.quote"></IWQuote>
