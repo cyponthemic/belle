@@ -52,6 +52,7 @@ export default {
   ],
 
   modules: [
+    '@nuxtjs/netlify-files',
     ['storyblok-nuxt', {accessToken: 'lVNHPozYedEoxZotaBKjJgtt', cacheProvider: 'memory'}],
     "@nuxt/http",
   ],
