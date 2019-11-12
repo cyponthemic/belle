@@ -16,7 +16,7 @@ export default class NavItem {
   }
 
   get link() {
-    return this.full_slug || this.made_up_link
+    return '/' + this.full_slug || this.made_up_link
   }
 
   get title() {

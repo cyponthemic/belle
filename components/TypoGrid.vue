@@ -11,7 +11,7 @@
 <style>
   .overlay {
     pointer-events: none;
-    background: var(--primary);
+    background: var(--background);
     opacity: 0;
     z-index: 0;
   }

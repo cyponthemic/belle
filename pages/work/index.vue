@@ -1,17 +1,12 @@
 <template>
   <div class="m-nav">
-    <ul class="text-center text-white">
+    <ul class="text-center">
       <li  v-for="nav in navigation">
         <h1 class="swing-in-top-fwd work-item text-5xl">
           <nuxt-link :to="nav.link">{{ nav.title }}</nuxt-link>
         </h1>
       </li>
     </ul>
-    <style>
-      :root {
-        --secondary: #313c80;
-      }
-    </style>
   </div>
 </template>
 <style>
@@ -46,6 +41,18 @@
         return this.data.stories.map((w,index) => new NavItem(w))
       }
     },
+
+    mounted() {
+      this.$store.commit('colors/update', {
+        key: 'background',
+        value: '#FEF7EA'
+      })
+    },
+
+    destroyed() {
+
+    },
+
     asyncData (context) {
       let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 

@@ -27,6 +27,10 @@ export default {
       {
         href:
           "https://agencehotelparticulier.com/assets/fonts/Saol_Display_Regular.woff"
+      },
+      {
+        href:
+          "https://fonts.googleapis.com/css?family=Work+Sans:300,400&display=swap"
       }
     ]
   },

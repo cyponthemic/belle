@@ -1,12 +1,19 @@
 <template>
   <div class="w-100 mx-auto">
     <nuxt-link to="/">
-      <h3 class="logotype text-center text-white absolute">Isabella <br> Wood</h3>
+      <h3
+        :class="backgroundContrast"
+        class="logotype text-center text-mono absolute"
+      >
+        Isabella <br> Wood</h3>
     </nuxt-link>
 
-    <Nuxt class="body"/>
+    <Nuxt class="body" :class="backgroundContrast" />
 
-    <div class="footer text-center text-white absolute inset-x-0">
+    <div
+      :class="backgroundContrast"
+      class="footer text-center text-mono absolute inset-x-0"
+    >
       <ul>
         <li>
           <nuxt-link to="/work">
@@ -15,9 +22,25 @@
         </li>
       </ul>
     </div>
+    <style>
+      :root {
+        --background: {{ background }};
+      }
+    </style>
   </div>
 </template>
-
+<script>
+  export default {
+    computed: {
+      background() {
+        return this.$store.state.colors.background;
+      },
+      backgroundContrast() {
+        return this.$store.getters['colors/backgroundContrast'];
+      }
+    },
+  }
+</script>
 <style>
   html {
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",

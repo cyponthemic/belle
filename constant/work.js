@@ -15,7 +15,7 @@ export default [
   {
     letter: 'B',
     name: 'Australian Red Cross Blood Service',
-    full_slug: 'australian-red-cross-blood-service',
+    full_slug: 'work/australian-red-cross-blood-service',
     width: 600
   },
   {

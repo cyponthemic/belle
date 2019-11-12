@@ -1,4 +1,5 @@
-function lightOrDark(color) {
+export default function lightOrDark(color) {
+  if(color === '#cd6440') return 'white'
 
   // Variables for red, green, blue values
   var r, g, b, hsp;
@@ -34,10 +35,10 @@ function lightOrDark(color) {
   // Using the HSP value, determine whether the color is light or dark
   if (hsp>127.5) {
 
-    return 'light';
+    return 'black';
   }
   else {
 
-    return 'dark';
+    return 'white';
   }
 }

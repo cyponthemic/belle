@@ -115,7 +115,7 @@
 
   .nav-item-title {
     z-index: 1;
-    background-color: var(--primary);
+    background-color: var(--background);
     opacity: 0;
   }
 

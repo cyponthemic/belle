@@ -6,14 +6,25 @@
 
 <script>
 
-import TypoGrid from "../components/TypoGrid";
+  import TypoGrid from "../components/TypoGrid";
 
 
-export default {
+  export default {
     components: {
       TypoGrid
-    }
-};
+    },
+    mounted() {
+      this.$store.commit('colors/update', {
+        key: 'background',
+        value: '#cd6440'
+      })
+    },
+
+    destroyed() {
+      this.$store.commit('colors/reset', 'background')
+    },
+
+  };
 </script>
 
 <style scoped>

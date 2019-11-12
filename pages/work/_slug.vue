@@ -22,12 +22,6 @@
           </div>
         </div>
       </div>
-
-      <style>
-        :root {
-          --secondary: {{ story.content.background_color || '#4a8071' }};
-        }
-      </style>
     </section>
   </div>
 </template>
@@ -44,14 +38,28 @@
 
     computed: {
       inBrief () {
+        if(!this.story.content.in_brief) return
         return marked(this.story.content.in_brief || '')
       },
       inTheory () {
+        if(!this.story.content.in_theory) return
         return marked(this.story.content.in_theory || '')
       },
       inPractice() {
+        if(!this.story.content.in_practice) return
         return marked(this.story.content.in_practice || '')
       }
+    },
+
+    mounted() {
+      this.$store.commit('colors/update', {
+        key: 'background',
+        value: this.story.content.background_color
+      })
+    },
+
+    destroyed() {
+      this.$store.commit('colors/reset' , 'background')
     },
 
     asyncData (context) {
