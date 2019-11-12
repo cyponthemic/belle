@@ -1,10 +1,10 @@
 <template>
-  <div class="container mx-auto pb-6 mb-6" v-if="story.content">
+  <div class="container mx-auto my-32 px-3" v-if="story && story.content">
     <section class="m-nav w-full max-w-4xl mx-auto text-center text-black" v-editable="story.content">
       <h1 class="text-xl mt-6 uppercase font-sans" v-html="story.name"></h1>
       <IWQuote v-if="story.content.quote" :quote="story.content.quote"></IWQuote>
-      <div class="flex justify-between mb-4 text-left pb-6">
-        <div class="w-1/4 mr-5">
+      <div class="blok lg:flex justify-between mb-4 text-left pb-6">
+        <div class="w:full lg:w-1/4 lg:mr-5">
           <div class="wysiwyg">
             <h3 class="text-xl mt-6 text-mono uppercase">In Brief</h3>
             <div v-html="marked(story.content.in_brief)"></div>
@@ -15,7 +15,7 @@
             <div v-html="marked(story.content.in_theory)"></div>
           </div>
         </div>
-        <div class="w-1/2">
+        <div class="w-full lg:w-1/2">
           <div class="wysiwyg">
             <h3 class="text-xl mt-6 text-mono uppercase">In Practice</h3>
             <div v-html="marked(story.content.in_practice)"></div>
@@ -37,6 +37,12 @@
 
     components: {IWQuote},
 
+    computed: {
+      story() {
+        return this.$store.state.work.items[this.slug];
+      }
+    },
+
     methods: {
       marked(value) {
         return marked(value)
@@ -54,8 +60,9 @@
       if(!get(this.story, 'content.background_color')) return
       this.$store.commit('colors/reset' , 'background')
     },
+    async fetch(context) {
+      if(context.store.state.work.items[context.params.slug]) return
 
-    asyncData (context) {
       let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
       let endpoint = `cdn/stories/work/${context.params.slug}`
 
@@ -63,10 +70,17 @@
         version: version,
         cv: context.store.state.cacheVersion
       }).then((res) => {
-        return res.data
+        return context.store.commit('work/add', res.data.story)
       }).catch((res) => {
-        context.error({ statusCode: res.response.status, message: res.response.data })
+        if(res.response) {
+          context.error({ statusCode: res.response.status, message: res.response.data })
+        }
       })
+    },
+    asyncData (context) {
+      return {
+        slug: context.params.slug
+      }
     }
   }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid top-0 w-full h-full ">
+  <div class="iw-grid top-0">
     <TypoGridItem
       :key="nav.link"
       v-for="(nav, index) in navigation"
