@@ -12,7 +12,7 @@
 
     <div
       :class="backgroundContrast"
-      class="footer text-center text-mono absolute inset-x-0"
+      class="footer py-4 text-center text-mono fixed inset-x-0"
     >
       <ul>
         <li>
@@ -72,8 +72,9 @@
   }
 
   .footer {
+    background-color: var(--background);
     font-size: 18px;
+    bottom: 0;
     text-transform: uppercase;
-    bottom: 20px;
   }
 </style>

@@ -2,15 +2,18 @@ export default [
   {
     letter: 'I',
     name: "Roadshow Films",
+    full_slug: 'work/roadshow-films',
   },
   {
     letter: 'S',
     name: 'Smiling Dick',
-    oneLine: true
+    oneLine: true,
+    full_slug: 'work/smiling-dick',
   },
   {
     letter: 'A',
-    name: 'Qantas'
+    name: 'Qantas',
+    full_slug: 'work/qantas',
   },
   {
     letter: 'B',
@@ -20,7 +23,8 @@ export default [
   },
   {
     letter: 'E',
-    name: 'Anambah House'
+    name: 'Anambah House',
+    full_slug: 'work/Anambah-House',
   },
   {
     letter: 'L',

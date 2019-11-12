@@ -51,6 +51,7 @@ h1 {
 
 .text-display {
   font-size: 7vw;
+  line-height: 1.2;
 }
 
 .text-mono {
@@ -180,3 +181,9 @@ h1 {
   }
 }
 
+
+.wysiwyg {
+  a {
+    text-decoration: underline;
+  }
+}
