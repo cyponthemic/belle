@@ -39,7 +39,7 @@ export default {
    ** Global CSS
    ** Doc: https://nuxtjs.org/api/configuration-css
    */
-  css: ["~/assets/main.scss", "~/assets/css/tailwind.css"],
+  css: ["~/assets/main.scss"],
 
   /*
    ** Plugins to load before mounting the App

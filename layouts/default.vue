@@ -1,5 +1,6 @@
 <template>
   <div class="w-100 mx-auto">
+    <span class="text-white text-black"></span>
     <nuxt-link to="/">
       <h3
         :class="backgroundContrast"
