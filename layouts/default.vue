@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 mx-auto">
+  <div class="w-full mx-auto">
     <span class="text-white text-black"></span>
     <nuxt-link to="/">
       <h3

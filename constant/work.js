@@ -6,7 +6,7 @@ export default [
   },
   {
     letter: 'S',
-    name: 'Smiling Dick',
+    name: 'Smiling<br>Dick',
     oneLine: true,
     full_slug: 'work/smiling-dick',
   },

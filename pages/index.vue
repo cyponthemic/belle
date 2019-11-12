@@ -1,5 +1,5 @@
 <template>
-  <section class="w-100 h-100">
+  <section class="w-full h-full">
     <TypoGrid class="grid--layout-1"></TypoGrid>
   </section>
 </template>

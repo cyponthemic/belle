@@ -1,11 +1,11 @@
 <template>
-  <div class="grid top-0 w-100 h-100">
+  <div class="grid top-0 w-full h-full ">
     <TypoGridItem
       :key="nav.link"
       v-for="(nav, index) in navigation"
       :nav="nav"
     ></TypoGridItem>
-    <div :class="{'visible' : current > -1}" class="overlay absolute w-100 h-100 t-0"></div>
+    <div :class="{'visible' : current > -1}" class="overlay absolute w-full h-full t-0"></div>
   </div>
 </template>
 <style>
@@ -14,10 +14,11 @@
     background: var(--background);
     opacity: 0;
     z-index: 0;
+    transition: opacity 1s;
   }
 
   .nav-item:hover ~ .overlay {
-    opacity: .6;
+    opacity: .8;
   }
 </style>
 <script>
