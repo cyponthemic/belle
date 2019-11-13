@@ -20,6 +20,14 @@
             <h3 class="text-xl mt-6 text-mono uppercase">In Practice</h3>
             <div v-html="marked(story.content.in_practice)"></div>
           </div>
+
+
+        </div>
+      </div>
+      <div class="blok lg:flex justify-between mb-4 text-left pb-6">
+        <div class="w-full">
+          <component :key="blok._uid" v-for="blok in story.content.body"
+                     :blok="blok" :is="blok.component"></component>
         </div>
       </div>
     </section>
