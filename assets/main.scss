@@ -187,11 +187,24 @@ h1 {
 }
 
 
-.wysiwyg a {
-  text-decoration: underline;
-}
+.wysiwyg {
+  h1, h2, h3 {
+    font-family: 'Saol_Display';
+  }
 
-.wysiwyg h2 {
-  font-family: 'Saol_Display';
-  font-size: 2rem;
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 }
