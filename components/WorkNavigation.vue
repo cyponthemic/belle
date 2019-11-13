@@ -15,7 +15,7 @@
   export default {
     computed: {
       navigation() {
-        return values(this.$store.state.work.items).map((w, index) => new NavItem(w))
+        return  this.$store.getters['work/navigation']
       }
     },
 

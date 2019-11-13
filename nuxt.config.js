@@ -10,7 +10,7 @@ export default {
       devtools: true
     }
   },
-  
+
   mode: "universal",
 
   /*
