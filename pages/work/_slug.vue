@@ -1,24 +1,24 @@
 <template>
   <div class="container mx-auto my-32 px-3" v-if="story && story.content">
-    <section class="m-nav w-full max-w-4xl mx-auto text-center text-black" v-editable="story.content">
+    <section class="m-nav w-full max-w-3xl mx-auto text-center text-black" v-editable="story.content">
       <h1 class="text-xl mt-6 uppercase font-sans" v-html="story.name"></h1>
       <IWQuote v-if="story.content.quote" :quote="story.content.quote"></IWQuote>
       <div class="blok lg:flex justify-between mb-4 text-left pb-6">
         <div class="w:full lg:w-1/4 lg:mr-5">
           <div>
-            <h3 class="text-xl mt-6 text-mono uppercase">In Brief</h3>
-            <div class="wysiwyg" v-html="marked(story.content.in_brief)"></div>
+            <h3 class="text-mono ">In Brief</h3>
+            <div class="wysiwyg text-lg" v-html="marked(story.content.in_brief)"></div>
           </div>
 
           <div>
-            <h3 class="text-xl mt-6 text-mono uppercase">In Theory</h3>
-            <div class="wysiwyg" v-html="marked(story.content.in_theory)"></div>
+            <h3 class="text-mono ">In Theory</h3>
+            <div class="wysiwyg text-lg" v-html="marked(story.content.in_theory)"></div>
           </div>
         </div>
-        <div class="w-full lg:w-1/2">
+        <div class="w-full lg:w-3/5">
           <div>
-            <h3 class="text-xl mt-6 text-mono uppercase">In Practice</h3>
-            <div class="wysiwyg" v-html="marked(story.content.in_practice)"></div>
+            <h3 class="text-mono ">In Practice</h3>
+            <div class="wysiwyg text-lg" v-html="marked(story.content.in_practice)"></div>
           </div>
 
 
@@ -33,7 +33,6 @@
     </section>
   </div>
 </template>
-
 <script>
   import marked from 'marked'
   import get from 'lodash-es/get'

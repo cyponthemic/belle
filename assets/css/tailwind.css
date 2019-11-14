@@ -8,9 +8,11 @@
 }
 
 .text-mono {
+  @apply uppercase text-lg mt-6;
+
   letter-spacing: 3px;
 }
 
 .wysiwyg h4 {
-  @apply text-mono uppercase
+  @apply text-mono
 }
