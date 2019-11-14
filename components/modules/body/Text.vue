@@ -12,5 +12,5 @@
         return marked(this.blok.Body);
       }
     },
-  }
+    }
 </script>
