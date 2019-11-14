@@ -49,16 +49,6 @@ h1 {
   }
 }
 
-.text-display {
-  font-size: 7vw;
-  line-height: 1.2;
-}
-
-.text-mono {
-  letter-spacing: 3px;
-}
-
-
 .iw-grid {
   display: none;
   width: 100%;
@@ -186,6 +176,13 @@ h1 {
   }
 }
 
+
+
+
+.wysiwyg h2 {
+  font-family: 'Saol_Display';
+  font-size: 2rem;
+}
 
 .wysiwyg {
   h1, h2, h3 {

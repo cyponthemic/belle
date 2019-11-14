@@ -1,3 +1,16 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.text-display {
+  font-size: 7vw;
+  line-height: 1.2;
+}
+
+.text-mono {
+  letter-spacing: 3px;
+}
+
+.wysiwyg h4 {
+  @apply text-mono uppercase
+}
