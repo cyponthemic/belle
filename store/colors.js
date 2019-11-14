@@ -29,3 +29,9 @@ export const mutations = {
     state.key = original.key
   }
 }
+
+export default {
+  state: state,
+  getters: getters,
+  mutations: mutations,
+}

@@ -16,3 +16,14 @@
 .wysiwyg h4 {
   @apply text-mono
 }
+
+:root {
+  --primary: #cd6440;
+  --secondary: #e3c4e2;
+  --background: #e3c4e2;
+  --contrast: white
+}
+
+html {
+  background-color: var(--background);
+}
