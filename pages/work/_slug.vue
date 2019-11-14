@@ -5,27 +5,27 @@
       <IWQuote v-if="story.content.quote" :quote="story.content.quote"></IWQuote>
       <div class="blok lg:flex justify-between mb-4 text-left pb-6">
         <div class="w:full lg:w-1/4 lg:mr-5">
-          <div class="wysiwyg">
+          <div>
             <h3 class="text-xl mt-6 text-mono uppercase">In Brief</h3>
-            <div v-html="marked(story.content.in_brief)"></div>
+            <div class="wysiwyg" v-html="marked(story.content.in_brief)"></div>
           </div>
 
-          <div class="wysiwyg">
+          <div>
             <h3 class="text-xl mt-6 text-mono uppercase">In Theory</h3>
-            <div v-html="marked(story.content.in_theory)"></div>
+            <div class="wysiwyg" v-html="marked(story.content.in_theory)"></div>
           </div>
         </div>
         <div class="w-full lg:w-1/2">
-          <div class="wysiwyg">
+          <div>
             <h3 class="text-xl mt-6 text-mono uppercase">In Practice</h3>
-            <div v-html="marked(story.content.in_practice)"></div>
+            <div class="wysiwyg" v-html="marked(story.content.in_practice)"></div>
           </div>
 
 
         </div>
       </div>
       <div class="blok lg:flex justify-between mb-4 text-left pb-6">
-        <div class="w-full">
+        <div class="ml-auto w-full">
           <component :key="blok._uid" v-for="blok in story.content.body"
                      :blok="blok" :is="blok.component"></component>
         </div>
@@ -57,7 +57,7 @@
       }
     },
     mounted() {
-      if(!get(this.story, 'content.background_color')) return
+      if (!get(this.story, 'content.background_color')) return
       this.$store.commit('colors/update', {
         key: 'background',
         value: get(this.story, 'content.background_color')
@@ -65,11 +65,11 @@
     },
 
     destroyed() {
-      if(!get(this.story, 'content.background_color')) return
-      this.$store.commit('colors/reset' , 'background')
+      if (!get(this.story, 'content.background_color')) return
+      this.$store.commit('colors/reset', 'background')
     },
     async fetch(context) {
-      if(context.store.state.work.items[context.params.slug]) return
+      if (context.store.state.work.items[context.params.slug]) return
 
       let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
       let endpoint = `cdn/stories/work/${context.params.slug}`
@@ -80,12 +80,12 @@
       }).then((res) => {
         return context.store.commit('work/add', res.data.story)
       }).catch((res) => {
-        if(res.response) {
-          context.error({ statusCode: res.response.status, message: res.response.data })
+        if (res.response) {
+          context.error({statusCode: res.response.status, message: res.response.data})
         }
       })
     },
-    asyncData (context) {
+    asyncData(context) {
       return {
         slug: context.params.slug
       }
