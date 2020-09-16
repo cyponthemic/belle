@@ -1,5 +1,5 @@
 <template>
-  <img  class="w-100" :src="blok.source" v-editable="blok" alt="">
+  <img  class="w-full" :src="blok.source" v-editable="blok" alt="">
 </template>
 <script>
   import marked from 'marked'

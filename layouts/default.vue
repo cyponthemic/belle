@@ -1,7 +1,7 @@
 <template>
   <div class="w-full mx-auto">
     <span class="text-white text-black"></span>
-    <nuxt-link to="/">
+    <nuxt-link :to="$route.fullPath !== '/' ? '/' : '/about'">
       <h3
         :class="backgroundContrast"
         class="logotype text-center text-mono absolute"
