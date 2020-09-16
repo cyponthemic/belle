@@ -9,9 +9,11 @@
 
   import TypoGrid from "../components/TypoGrid";
   import WorkNavigation from "@/components/WorkNavigation";
+  import storyblokLivePreview from "@/mixins/storyblokLivePreview";
 
 
   export default {
+    mixins: [storyblokLivePreview],
     components: {
       TypoGrid,
       WorkNavigation

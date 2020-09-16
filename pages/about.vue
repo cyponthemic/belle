@@ -44,12 +44,6 @@ export default {
 
   components: {IWQuote},
 
-  computed: {
-    story() {
-      return this.$store.state.work.items[this.slug];
-    }
-  },
-
   methods: {
     marked(value) {
       return marked(value || '')
@@ -68,13 +62,13 @@ export default {
     this.$store.commit('colors/reset', 'background')
   },
   asyncData(context) {
-    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     return context.app.$storyapi.get('cdn/stories/about', {
-      version: version,
+      version: context.query._storyblok || context.isDev ? 'draft' : 'published',
       cv: context.store.state.cacheVersion
     }).then((res) => {
       return {
         slug: context.params.slug,
+        version: context.query._storyblok || context.isDev ? 'draft' : 'published',
         story: res.data.story
       }
     }).catch((res) => {
