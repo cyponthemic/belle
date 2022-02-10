@@ -20,7 +20,7 @@
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
     "marked": "^0.7.0",
-    "node-sass": "4.13.0",
+    "node-sass": "7.0.0",
     "nuxt": "^2.5.1",
     "reqlim": "^0.0.0",
     "sass-loader": "8.0.0",
